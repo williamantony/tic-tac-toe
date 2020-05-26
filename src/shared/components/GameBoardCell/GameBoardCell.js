@@ -11,6 +11,10 @@ class GameBoardCell extends PureComponent {
   static getDerivedStateFromProps(props, state) {
     const newState = {};
 
+    if (props.selected === state.selected && props.by === state.by) {
+      return null;
+    }
+
     if (props.selected !== state.selected) {
       newState.selected = props.selected;
     }
